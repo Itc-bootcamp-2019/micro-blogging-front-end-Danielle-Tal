@@ -1,0 +1,62 @@
+.Tweet{
+    position: relative;
+    width: 600px;
+    height: 100px;
+    left: 367px;
+    top: 205px;
+    margin-bottom: 10px;
+
+    background: #343A40;
+    border-radius: 6px;
+}
+.TweetText{
+    position: relative;
+    width: 455px;
+    height: 32px;
+    /* left: 387px;
+    top: 253px; */
+
+    /* font-family: Roboto; */
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: #FFFFFF;
+}
+.Tweet-user{
+    position: absolute;
+    width: 162px;
+    height: 12px;
+    left: 20px;
+    top: 0;
+
+    /* font-family: Roboto; */
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+
+    color: #6C757D;
+}
+.Tweet-time{
+    position: absolute;
+    width: 169px;
+    height: 16px;
+    left: 526px;
+    top: 0;
+    z-index: 1;
+
+    /* font-family: Roboto; */
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+
+    color: #6C757D;
+}

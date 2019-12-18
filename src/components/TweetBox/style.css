@@ -1,0 +1,89 @@
+.createTweetText{
+    position: absolute;
+    padding-bottom: 140px;
+    padding-left: 20px;
+/* 
+    font-family: Roboto; */
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #CCCCCC;
+}
+
+.TweetBox{
+    position: absolute;
+    width: 600px;
+    height: 180px;
+    left: 367px;
+    top: 5px;
+    text-align: left;
+    border: 2px solid #CCCCCC;
+    box-sizing: border-box;
+    border-radius: 6px;
+    background-color: #282c34;
+}
+.buttonText{
+   position: absolute;
+    width: 53px;
+    height: 29px;
+    left: 897px;
+    top: 133px;
+
+    /* font-family: Roboto; */
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+.createTweetButton{
+    position: absolute;
+    width: 68px;
+    height: 34px;
+    left: 889px;
+    top: 131px;
+
+    background: #007BFF;
+    border-radius: 4px;
+}
+.createTweetButton:disabled{
+    background: gray;
+}
+
+.errormessege{
+    position: absolute;
+    width: 338px;
+    height: 29px;
+    left: 383px;
+    top: 136px;
+
+    background: #F8D7DA;
+    border: 1px solid #F5C6CB;
+    box-sizing: border-box;
+    border-radius: 4px;
+    /* display: none; */
+}
+.error-messege-text{
+    position: absolute;
+    width: 330px;
+    height: 15px;
+    left: 27px;
+    top: -9px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #721C24;
+}
