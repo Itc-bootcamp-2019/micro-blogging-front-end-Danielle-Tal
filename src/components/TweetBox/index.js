@@ -7,20 +7,11 @@ class TweetBox extends React.Component {
         super(props)
         this.state = {
             tweet: "",
-            lengthValid: true,
-            errorMessage: false,
         }
     }
 
     handleChange(event) {
         this.setState({ tweet: event.target.value })
-        if (this.state.tweet.length > 140) {
-            this.setState({ lengthValid: false });
-            this.setState({ errorMessage: true });
-        } else {
-            this.setState({ lengthValid: true });
-            this.setState({ errorMessage: false });
-        }
     }
 
     render() {
@@ -29,12 +20,16 @@ class TweetBox extends React.Component {
             <MyAppContext.Consumer>
                 {({ addTweet }) => (
                     <div>
-                        <textarea className="createTweetText TweetBox" placeholder="What you have in mind..."
+                        <textarea className="createTweetText TweetBox" placeholder="What you have in mind..." value={tweet}
                             onChange={(event) => this.handleChange(event)}>
                         </textarea>
-                        {this.state.errorMessage && <div className="errormessege" ><p className="error-messege-text">The tweet can't contain more then 140 chars</p></div>}
-                        <button type="submit" className="createTweetButton buttonText" disabled={!this.state.lengthValid}
-                            onClick={() => addTweet(tweet)} >Tweet</button>
+                        {this.state.tweet.length > 140 && <div className="errormessege" ><p className="error-messege-text">The tweet can't contain more then 140 chars</p></div>}
+                        <button type="submit" className="createTweetButton buttonText" disabled={this.state.tweet.length > 140 || this.state.tweet.length === 0}
+                            onClick={() =>{ 
+                                addTweet(tweet);
+                                this.setState({tweet: ''});
+                            }
+                            } >Tweet</button>
                     </div>)}
             </MyAppContext.Consumer>
         )

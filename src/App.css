@@ -26,4 +26,41 @@
   color: white;
 }
 
+.loader{
+margin-top: 200px;
+}
+
+.error-messege-text{
+  position: absolute;
+  width: 330px;
+  height: 15px;
+  left: 27px;
+  top: -9px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #721C24;
+}
+
+.errormessege{
+  position: absolute;
+  width: 338px;
+  height: 29px;
+  left: 383px;
+  top: 136px;
+
+  background: #F8D7DA;
+  border: 1px solid #F5C6CB;
+  box-sizing: border-box;
+  border-radius: 4px;
+  /* display: none; */
+}
+
 

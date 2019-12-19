@@ -7,9 +7,9 @@ const TweetList = (props) => {
         <MyAppContext.Consumer>
             {({ tweets}) => (
                 tweets.map(tweet => (
-                        <div className="Tweet" > 
-                            <p className = "Tweet-user">Danielle</p>
-                            <p className="Tweet-time"> dateStamp</p>
+                        <div className="Tweet" key={tweet.userName + tweet.date} > 
+                            <p className = "Tweet-user">{tweet.userName}</p>
+                            <p className="Tweet-time"> {tweet.date}</p>
                             <p className="TweetText">{tweet.content} </p>
                         </div>
                 )))}
