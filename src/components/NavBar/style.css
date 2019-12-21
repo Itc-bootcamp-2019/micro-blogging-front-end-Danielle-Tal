@@ -1,0 +1,29 @@
+.Nav-bar {
+    position: absolute;
+    width: 1076px;
+    height: 58px;
+    left: 182px;
+    top: 0px;
+    background: #343A40;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.nav-link {
+    /* position: absolute; */
+    width: 38px;
+    height: 16px;
+    left: 217.87px;
+    top: 19px;
+    /* font-family: Roboto; */
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    padding-left: 20px;
+    display: inline-block;
+    text-decoration: none;
+}

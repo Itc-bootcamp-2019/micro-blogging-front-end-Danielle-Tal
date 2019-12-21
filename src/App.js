@@ -5,6 +5,9 @@ import TweetList from './components/TweetList';
 import './components/Tweet';
 import MyAppContext from './components/MyAppContext';
 import { getTweetsList, createTweet} from './lib/API';
+import NavBar from './components/NavBar/index';
+import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import Profile from './components/Profile'
 
 
 class App extends React.Component {
@@ -19,18 +22,21 @@ class App extends React.Component {
       }
     }
   
- 
+    getTweets(app) {
+      getTweetsList().then(response => {
+      const tweets = response.data.tweets;
+      app.setState({ tweets: tweets, isLoading:false });
+      });
+    }
+
   componentDidMount(){
-        getTweetsList().then(response => {
-          const tweets = response.data.tweets;
-          this.setState({ tweets: tweets, isLoading:false });
-      })
-    };
+    this.getTweets(this);
+    setInterval(() => {this.getTweets(this)}, 10000)};
 
   handleOnTweet(tweet) {
     const tweetobj= {
       content: tweet,
-      userName: 'Dani',
+      userName: localStorage.getItem('userName'),
       date:new Date().toISOString(),}
     createTweet(tweetobj)
     .then(() => {
@@ -48,9 +54,12 @@ class App extends React.Component {
 
   render() {
     return (
+      <Router>
       <div className="App">
         <header className="App-header">
-        
+        <NavBar></NavBar>
+      <Switch>
+        <Route path="/home">
           <MyAppContext.Provider value = {this.state}>
             <TweetBox></TweetBox>
             {this.state.errorMessage && <div className="errormessege" ><p className="error-messege-text">{this.state.errorText}</p></div>}
@@ -58,11 +67,15 @@ class App extends React.Component {
              <img className="loader" src="http://pluspng.com/img-png/loader-png-22-jan-2015-23-46-3161-loader-6-png-22-jan-2015-23-46-3087-loader-7-png-22-jan-2015-23-46-3177-loader-8-png-22-jan-2015-23-46-3582-loader-9-png-504.png" alt="loader"></img>}
             <TweetList>
             </TweetList>
-          </MyAppContext.Provider>
-
-
-        </header>
-      </div>
+            </MyAppContext.Provider>
+        </Route>
+        <Route path="/profile">
+          <Profile></Profile>
+        </Route>
+      </Switch>
+      </header>
+    </div>
+    </Router>
     );
   }
 }
