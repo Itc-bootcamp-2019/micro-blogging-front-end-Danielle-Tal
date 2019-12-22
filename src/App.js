@@ -63,7 +63,7 @@ class App extends React.Component {
           <header className="App-header">
             <NavBar></NavBar>
             <Switch>
-              <Route path="/home">
+              <Route exact path="/">
                 <MyAppContext.Provider value={this.state}>
                   <TweetBox></TweetBox>
                   {this.state.errorMessage && (

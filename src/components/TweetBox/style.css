@@ -14,9 +14,9 @@
 
 .TweetBox {
   position: absolute;
-  width: 600px;
+  width: 55%;
   height: 180px;
-  left: 365px;
+  left: 22%;
   top: 75px;
   margin-top: 10px;
   text-align: left;
@@ -27,28 +27,28 @@
 }
 .buttonText {
   position: absolute;
-  width: 53px;
+  /* width: 53px;
   height: 29px;
   left: 897px;
-  top: 133px;
+  top: 133px; */
 
   /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 19px;
-  display: flex;
+  /* display: flex;
   align-items: center;
-  text-align: center;
+  text-align: center; */
 
   color: #ffffff;
 }
 .createTweetButton {
   position: absolute;
-  width: 68px;
-  height: 34px;
-  left: 889px;
-  top: 220px;
+  /* width: 68px;
+  height: 34px; */
+  right: 24%;
+    bottom: 15%;
 
   background: #007bff;
   border-radius: 4px;
@@ -87,4 +87,11 @@
   text-align: center;
 
   color: #721c24;
+}
+.tweet-box-wrapper{
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: flex-end;
 }

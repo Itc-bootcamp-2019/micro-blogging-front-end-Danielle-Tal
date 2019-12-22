@@ -2,8 +2,8 @@
   position: absolute;
   width: 103px;
   height: 42px;
-  left: 369px;
-  top: 80px;
+  left: 22%;
+  top: 13%;
   /* 
 font-family: Roboto; */
   font-style: normal;
@@ -17,8 +17,8 @@ font-family: Roboto; */
   position: absolute;
   width: 90px;
   height: 21px;
-  left: 368px;
-  top: 178px;
+  left: 22%;
+  top: 25%;
   /* 
 font-family: Roboto; */
   font-style: normal;
@@ -31,7 +31,7 @@ font-family: Roboto; */
 
 .user-name-input {
   position: absolute;
-  width: 600px;
+  width: 50%;
   height: 61px;
   left: 367px;
   top: 205px;
@@ -45,8 +45,8 @@ font-family: Roboto; */
   position: absolute;
   width: 68px;
   height: 34px;
-  left: 889px;
-  top: 300px;
+  left: 65%;
+  top: 40%;
   background: #007bff;
   border-radius: 4px;
 }
@@ -55,8 +55,8 @@ font-family: Roboto; */
   position: absolute;
   width: 53px;
   height: 29px;
-  left: 897px;
-  top: 300px;
+  /* left: 897px;
+  top: 300px; */
   /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
@@ -72,8 +72,8 @@ font-family: Roboto; */
   position: absolute;
   /* width: 59px;
     height: 19px; */
-  left: 383px;
-  top: 225px;
+    left: 22%;
+    top: 30%;
   /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;

@@ -1,12 +1,13 @@
 .Nav-bar {
   position: absolute;
-  width: 1076px;
+  width: 80%;
   height: 58px;
-  left: 182px;
+  left: 10%;
   top: 0px;
   background: #343a40;
   border-radius: 6px;
   margin-bottom: 20px;
+  z-index: 1;
 }
 
 .nav-link {

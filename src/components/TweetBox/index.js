@@ -19,7 +19,7 @@ class TweetBox extends React.Component {
     return (
       <MyAppContext.Consumer>
         {({ addTweet }) => (
-          <div>
+          <div className="tweet-box-wrapper">
             <textarea
               className="createTweetText TweetBox"
               placeholder="What you have in mind..."

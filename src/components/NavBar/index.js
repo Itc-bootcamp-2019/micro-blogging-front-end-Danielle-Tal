@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 export default function NvBar() {
   return (
     <nav className="Nav-bar">
-      <Link className="nav-link" to="/home">
+      <Link className="nav-link" to="/">
         Home
       </Link>
       <Link className="nav-link" to="/profile">

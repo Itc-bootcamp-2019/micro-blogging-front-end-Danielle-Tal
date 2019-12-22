@@ -1,6 +1,6 @@
 .Tweet {
   position: relative;
-  width: 600px;
+  width: 55%;
   height: 100px;
   left: 367px;
   top: 205px;
@@ -11,12 +11,12 @@
 }
 .TweetText {
   position: absolute;
-  width: 455px;
-  height: 32px;
+  /* width: 455px;
+  height: 32px; */
   /* left: 387px;
     top: 253px; */
-  top: 35px;
-  right: 319px;
+  /* top: 35px;
+  right: 319px; */
 
   /* font-family: Roboto; */
   font-style: normal;
@@ -47,7 +47,7 @@
   /* position: absolute; */
   width: 169px;
   height: 16px;
-  left: 419px;
+  /* left: 419px; */
   top: 223px;
 
   /* font-family: Roboto; */

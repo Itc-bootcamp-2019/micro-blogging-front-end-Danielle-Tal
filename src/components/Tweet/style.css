@@ -1,9 +1,9 @@
 .Tweet {
   position: relative;
-  width: 600px;
+  width: 55%;
   height: 100px;
-  left: 367px;
-  top: 285px;
+  left: 22%;
+  top: 0;
   margin-bottom: 10px;
 
   background: #343a40;
@@ -11,12 +11,10 @@
 }
 .TweetText {
   position: absolute;
-  width: 455px;
-  height: 32px;
-  /* left: 387px;
-    top: 253px; */
-  top: 35px;
-  right: 319px;
+  /* width: 455px;
+  height: 32px; */
+  top: 30%;
+  left: 3%;
   /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
@@ -44,11 +42,12 @@
 }
 .Tweet-time {
   position: absolute;
-  width: 169px;
+  /* width: 169px;
   height: 16px;
-  left: 420px;
+  left: 420px; */
   top: 0;
   z-index: 1;
+  right: 4%;
 
   /* font-family: Roboto; */
   font-style: normal;
@@ -61,3 +60,14 @@
 
   color: #6c757d;
 }
+
+@media only screen and (max-width: 480px) {
+    .Tweet-user {
+        top: 32px;
+        left: 7%;
+    }
+    .TweetText{
+        top: 55%;
+        left: 7%;
+    }
+  }
