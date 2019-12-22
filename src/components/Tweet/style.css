@@ -1,62 +1,63 @@
-.Tweet{
-    position: relative;
-    width: 600px;
-    height: 100px;
-    left: 367px;
-    top: 285px;
-    margin-bottom: 10px;
+.Tweet {
+  position: relative;
+  width: 600px;
+  height: 100px;
+  left: 367px;
+  top: 285px;
+  margin-bottom: 10px;
 
-    background: #343A40;
-    border-radius: 6px;
+  background: #343a40;
+  border-radius: 6px;
 }
-.TweetText{
-    position: relative;
-    width: 455px;
-    height: 32px;
-    /* left: 387px;
+.TweetText {
+  position: absolute;
+  width: 455px;
+  height: 32px;
+  /* left: 387px;
     top: 253px; */
+  top: 35px;
+  right: 319px;
+  /* font-family: Roboto; */
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
 
-    /* font-family: Roboto; */
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 16px;
-
-    color: #FFFFFF;
+  color: #ffffff;
 }
-.Tweet-user{
-    position: absolute;
-    width: 162px;
-    height: 12px;
-    left: 20px;
-    top: 0;
+.Tweet-user {
+  position: absolute;
+  width: 162px;
+  height: 12px;
+  left: 20px;
+  top: 0;
 
-    /* font-family: Roboto; */
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 16px;
-    display: flex;
-    align-items: center;
+  /* font-family: Roboto; */
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
 
-    color: #6C757D;
+  color: #6c757d;
 }
-.Tweet-time{
-    position: absolute;
-    width: 169px;
-    height: 16px;
-    left: 420px;
-    top: 0;
-    z-index: 1;
+.Tweet-time {
+  position: absolute;
+  width: 169px;
+  height: 16px;
+  left: 420px;
+  top: 0;
+  z-index: 1;
 
-    /* font-family: Roboto; */
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 16px;
-    display: flex;
-    align-items: center;
-    text-align: right;
+  /* font-family: Roboto; */
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-align: right;
 
-    color: #6C757D;
+  color: #6c757d;
 }
