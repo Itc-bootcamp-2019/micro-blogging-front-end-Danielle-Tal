@@ -1,11 +1,10 @@
 .Tweet {
   position: relative;
   width: 55%;
-  height: 100px;
+  height: 14vh;
   left: 22%;
-  top: 0;
-  margin-bottom: 10px;
-
+  top: 30px;
+  margin-top: 10px;
   background: #343a40;
   border-radius: 6px;
 }

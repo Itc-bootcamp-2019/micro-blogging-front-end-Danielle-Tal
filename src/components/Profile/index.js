@@ -6,7 +6,8 @@ class Profile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      userName: ""
+      userName: "",
+      errorMessage: false,
     };
   }
   handleChange(event) {

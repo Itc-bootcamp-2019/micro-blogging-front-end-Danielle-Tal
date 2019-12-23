@@ -17,7 +17,8 @@ class App extends React.Component {
       addTweet: this.handleOnTweet.bind(this),
       isLoading: true,
       errorMessage: false,
-      errorText: ""
+      errorText: "",
+      userName:"Name"
     };
   }
 
@@ -36,9 +37,10 @@ class App extends React.Component {
   }
 
   handleOnTweet(tweet) {
+    const {userName} = this.state
     const tweetobj = {
       content: tweet,
-      userName: localStorage.getItem("userName"),
+      userName: (localStorage.getItem("userName")||userName),
       date: new Date().toISOString()
     };
     createTweet(tweetobj)
@@ -47,32 +49,32 @@ class App extends React.Component {
         const tweetarray = [tweetobj, ...tweets];
         this.setState({ tweets: tweetarray });
       })
-      .catch(response => {
-        console.log(response.response.data);
-        this.setState({
-          errorMessage: true,
-          errorText: response.response.data
-        });
-      });
-  }
+      // .catch(response => {
+      //   console.log(response.response.data);
+      //   this.setState({
+      //     errorMessage: true,
+      //     errorText: `Please insert a user name on the profile page`
+      //   });
+      };
+  
 
   render() {
     return (
       <Router>
-        <div className="App">
-          <header className="App-header">
-            <NavBar></NavBar>
-            <Switch>
-              <Route exact path="/">
-                <MyAppContext.Provider value={this.state}>
+        <Switch>
+          <div className="App">
+            <header className="App-header">
+              <MyAppContext.Provider value={this.state}>
+                <NavBar></NavBar>
+                <Route exact path="/">
                   <TweetBox></TweetBox>
-                  {this.state.errorMessage && (
+                  {/* {this.state.errorMessage && (
                     <div className="errormessege">
                       <p className="error-messege-text">
                         {this.state.errorText}
                       </p>
                     </div>
-                  )}
+                  )} */}
                   {this.state.isLoading && (
                     <img
                       className="loader"
@@ -81,14 +83,14 @@ class App extends React.Component {
                     ></img>
                   )}
                   <TweetList></TweetList>
-                </MyAppContext.Provider>
-              </Route>
-              <Route path="/profile">
-                <Profile></Profile>
-              </Route>
-            </Switch>
-          </header>
-        </div>
+                </Route>
+                <Route path="/profile">
+                  <Profile></Profile>
+                </Route>
+              </MyAppContext.Provider>
+            </header>
+          </div>
+        </Switch>
       </Router>
     );
   }

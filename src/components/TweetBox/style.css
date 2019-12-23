@@ -48,7 +48,7 @@
   /* width: 68px;
   height: 34px; */
   right: 24%;
-    bottom: 15%;
+  bottom: -3%;
 
   background: #007bff;
   border-radius: 4px;
@@ -59,10 +59,10 @@
 
 .errormessege {
   position: absolute;
-  width: 338px;
-  height: 29px;
-  left: 383px;
-  top: 136px;
+  width: 37%;
+  height: 8%;
+  top: 200px;
+  left: 23%;
 
   background: #f8d7da;
   border: 1px solid #f5c6cb;
@@ -72,11 +72,12 @@
 }
 .error-messege-text {
   position: absolute;
-  width: 330px;
+  width: 100%;
   height: 15px;
-  left: 27px;
-  top: -9px;
-
+  left: 0;
+  top: 1px;
+  padding-left: 2%;
+  padding-right: 2%;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -94,4 +95,6 @@
     flex-grow: 1;
     justify-content: center;
     align-items: flex-end;
+    height: 34vh;
+    flex-wrap: wrap;
 }

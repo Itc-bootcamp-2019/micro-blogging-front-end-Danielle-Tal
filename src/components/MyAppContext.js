@@ -5,6 +5,7 @@ const MyAppContext = React.createContext({
     dateStamp: '444444',
     tweet: '',
     userName: "Danielle",
+    errorMessage: false,
     addTweet: (tweet) => {}
 });
 
