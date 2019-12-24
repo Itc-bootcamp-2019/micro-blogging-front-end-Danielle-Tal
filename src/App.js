@@ -8,6 +8,7 @@ import { getTweetsList, createTweet } from "./lib/API";
 import NavBar from "./components/NavBar/index";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Profile from "./components/Profile";
+import firebase from "./firebase";
 
 class App extends React.Component {
   constructor(props) {
@@ -18,45 +19,63 @@ class App extends React.Component {
       isLoading: true,
       errorMessage: false,
       errorText: "",
-      userName:"Name"
+      userName: "Name"
     };
   }
 
   getTweets() {
-    getTweetsList().then(response => {
-      const tweet = response.data.tweets;
-      this.setState({ tweets: tweet, isLoading: false });
-    });
-  }
+    // getTweetsList().then(response => {
+    //   const tweet = response.data.tweets;
+    //   this.setState({ tweets: tweet, isLoading: false });
+    // });
+    const db = firebase.firestore()
+    let tweetarray = []
+    db.collection("tweets")
+      .get()
+      .then((querySnapshot) => {
+        // const tweet = response.data;
+        querySnapshot.forEach((response) => {
+          // doc.data() is never undefined for query doc snapshots
+          // console.log(doc.id, " => ", doc.data());
+          tweetarray.push(response.data())
+        })
+        this.setState({ tweets: tweetarray, isLoading: false })
+      })
+  };
 
   componentDidMount() {
     this.getTweets(this);
-    setInterval(() => {
-      this.getTweets(this);
-    }, 10000);
+    //   setInterval(() => {
+    //     this.getTweets(this);
+    //   }, 10000);
   }
 
   handleOnTweet(tweet) {
-    const {userName} = this.state
+    const db = firebase.firestore();
+    const { userName } = this.state;
     const tweetobj = {
       content: tweet,
-      userName: (localStorage.getItem("userName")||userName),
+      userName: localStorage.getItem("userName") || userName,
       date: new Date().toISOString()
     };
-    createTweet(tweetobj)
-      .then(() => {
-        const { tweets } = this.state;
-        const tweetarray = [tweetobj, ...tweets];
-        this.setState({ tweets: tweetarray });
-      })
-      // .catch(response => {
-      //   console.log(response.response.data);
-      //   this.setState({
-      //     errorMessage: true,
-      //     errorText: `Please insert a user name on the profile page`
-      //   });
-      };
-  
+    db.collection("tweets").add({
+      content: tweet,
+      userName: localStorage.getItem("userName") || userName,
+      date: new Date().toISOString()
+    });
+    // createTweet(tweetobj)
+    //   .then(() => {
+    //     const { tweets } = this.state;
+    //     const tweetarray = [tweetobj, ...tweets];
+    //     this.setState({ tweets: tweetarray });
+    //   })
+    // .catch(response => {
+    //   console.log(response.response.data);
+    //   this.setState({
+    //     errorMessage: true,
+    //     errorText: `Please insert a user name on the profile page`
+    //   });
+  }
 
   render() {
     return (
